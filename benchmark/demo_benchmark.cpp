@@ -34,44 +34,19 @@ vector<int> makeArray(string path){
 
 int main(int argc, char **argv) {
 
-  // Tip 1: входные аргументы позволяют более гибко контролировать работу вашей программы.
-  // Можете передать путь до входного/выходного тестового файла в качестве аргумента программы.
-
-  for (int index = 0; index < argc; index++) {
-    cout << "Arg: " << argv[index] << '\n';
-  }
-
-  // Tip 2: для перевода строки в число можете использовать функцию stoi (string to integer)
-
-  // можете использовать функционал класса stringstream для обработки строки
-  auto ss = stringstream("0 1 2");  // передаете строку (входной аргумент или строку из файла) и обрабатываете ее
-
-  int number = 0;
-  ss >> number;  // number = 0
-  ss >> number;  // number = 1
-  ss >> number;  // number = 2
-
-  // работа с набором данных
   const auto path = string(kDatasetPath);
-  cout << "Path to the 'dataset/' folder: " << path << endl;
-
-  auto input_file = ifstream(path + "/dataset-example.csv");
-
-  if (input_file) {
-    // чтение и обработка набора данных ...
-  }
 
   vector<string> mas{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
-  vector<string> mas2{"100", "1000", "10000", "100000", "200000", "300000", "400000", "500000", "600000", "700000", "800000", "90000", "1000000"};
+  vector<string> mas2{"100", "1000", "10000", "100000", "200000", "300000", "400000", "500000", "600000", "700000", "800000", "900000", "1000000"};
   vector<string> mas3{"1", "2", "3", "4", "5"};
 
   auto output_file = ofstream(path);
   output_file.open(path + "/" + "result.csv", ios::out | ios::app);
-  output_file << "file" << "," << "count" << "," << "number" << "," << "heap_sort" << "," << "selection_sort" << endl;
+  output_file << "file" << "," << "count" << "," << "number" << "," << "selection_sort" << "," << "heap_sort" << endl;
   for(int i =0; i < 13; i++){
     for(int j = 0; j < 5; j++){
-      auto path_file = string(mas3.at(j) + "/" + mas2.at(i));
       for(int k = 0; k < 10; k++){
+        auto path_file = string("selection_sort/" + mas3.at(j) + "/" + mas2.at(i));
         auto data = makeArray(path + path_file);
         itis::HeapSort *main_heap = new itis::HeapSort();
         int n = stoi(mas2.at(i));
@@ -83,8 +58,10 @@ int main(int argc, char **argv) {
         const long time_elapsed_ns = chrono::duration_cast<chrono::nanoseconds>(time_diff).count();
 //        const long time_elapsed_ns = 0;
 
+        auto path_file2 = string("heap_sort/" + mas3.at(j) + "/" + mas2.at(i));
+        auto data2 = makeArray(path + path_file2);
         const auto time_point_before2 = chrono::steady_clock::now();
-        main_heap->sort(data);
+        main_heap->sort(data2);
         const auto time_point_after2 = chrono::steady_clock::now();
         const auto time_diff2 = time_point_after2 - time_point_before2;
         const long time_elapsed_ns2 = chrono::duration_cast<chrono::nanoseconds>(time_diff2).count();
@@ -94,23 +71,5 @@ int main(int argc, char **argv) {
     }
   }
   output_file.close();
-
-  // Контрольный тест: операции добавления, удаления, поиска и пр. над структурой данных
-
-  // Tip 3: время работы программы (или участка кода) можно осуществить
-  // как изнутри программы (std::chrono), так и сторонними утилитами
-
-  const auto time_point_before = chrono::steady_clock::now();
-
-  // здесь находится участок кода, время которого необходимо замерить
-
-  const auto time_point_after = chrono::steady_clock::now();
-
-  // переводим время в наносекунды
-  const auto time_diff = time_point_after - time_point_before;
-  const auto time_elapsed_ns = chrono::duration_cast<chrono::nanoseconds>(time_diff).count();
-
-  cout << "Time elapsed (ns): " << time_elapsed_ns << '\n';
-
   return 0;
 }
