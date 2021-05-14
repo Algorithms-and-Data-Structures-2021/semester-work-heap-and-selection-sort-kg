@@ -46,7 +46,7 @@ int main(int argc, char **argv) {
   for(int i =0; i < 13; i++){
     for(int j = 0; j < 5; j++){
       for(int k = 0; k < 10; k++){
-        auto path_file = string("selection_sort/" + mas3.at(j) + "/" + mas2.at(i));
+        auto path_file = string("selection_sort/" + mas3.at(j) + "/" + mas2.at(i) + ".csv");
         auto data = makeArray(path + path_file);
         itis::HeapSort *main_heap = new itis::HeapSort();
         int n = stoi(mas2.at(i));
@@ -58,7 +58,7 @@ int main(int argc, char **argv) {
         const long time_elapsed_ns = chrono::duration_cast<chrono::nanoseconds>(time_diff).count();
 //        const long time_elapsed_ns = 0;
 
-        auto path_file2 = string("heap_sort/" + mas3.at(j) + "/" + mas2.at(i));
+        auto path_file2 = string("heap_sort/" + mas3.at(j) + "/" + mas2.at(i) + ".csv");
         auto data2 = makeArray(path + path_file2);
         const auto time_point_before2 = chrono::steady_clock::now();
         main_heap->sort(data2);
