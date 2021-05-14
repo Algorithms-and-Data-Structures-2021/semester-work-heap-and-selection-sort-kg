@@ -12,7 +12,7 @@ namespace itis {
 
   // Пример: объявление структуры с полями и методами
 
-  void selection_sort(std::vector<int> data, int n);
+  void selection_sort(std::vector<int> &data, int n);
 
   struct HeapSort {
    public:
