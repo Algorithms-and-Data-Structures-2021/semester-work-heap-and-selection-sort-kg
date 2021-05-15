@@ -36,8 +36,11 @@ int main(int argc, char **argv) {
 
   const auto path = string(kDatasetPath);
 
-  vector<string> mas{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
-  vector<string> mas2{"100", "1000", "10000", "100000", "200000", "300000", "400000", "500000", "600000", "700000", "800000", "900000", "1000000"};
+//  vector<string> mas{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+  vector<string> mas{"1", "2", "3", "4", "5"};
+//  vector<string> mas2{"100", "1000", "10000", "100000", "200000", "300000", "400000", "500000", "600000", "700000", "800000", "900000", "1000000"};
+//  vector<string> mas2{"100", "1000", "10000", "200000", "400000", "600000", "800000", "1000000"};
+  vector<string> mas2{"100", "1000", "10000", "250000", "500000", "750000", "1000000"};
   vector<string> mas3{"1", "2", "3", "4", "5"};
 
   auto output_file = ofstream(path);
@@ -55,7 +58,7 @@ int main(int argc, char **argv) {
         itis::selection_sort(data, n);
         const auto time_point_after = chrono::steady_clock::now();
         const auto time_diff = time_point_after - time_point_before;
-        const long time_elapsed_ns = chrono::duration_cast<chrono::nanoseconds>(time_diff).count();
+        const long time_elapsed_ns = chrono::duration_cast<chrono::milliseconds>(time_diff).count();
 //        const long time_elapsed_ns = 0;
 
         auto path_file2 = string("/heap_sort/" + mas3.at(j) + "/" + mas2.at(i) + ".csv");
