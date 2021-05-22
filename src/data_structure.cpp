@@ -6,24 +6,26 @@ namespace itis {
   void heapify(std::vector <int> &data, int used_size, int root)
   {
     // найти найбольший из 3 узлов: родителя и 2 его детей
-    int largest_ind = root;
-    int left_ind = 2 * root + 1;
-    int right_ind = 2 * root + 2;
+    auto largest_ind {static_cast<unsigned int>(root)};
+    auto left_ind {static_cast<unsigned int>(2 * root + 1)};
+    auto right_ind {static_cast<unsigned int>(2 * root + 2)};
 
-    if (left_ind < used_size && data[left_ind] > data[largest_ind])
+    if (left_ind < static_cast<unsigned int>(used_size)
+        && data[left_ind] > data[largest_ind])
     {
       largest_ind = left_ind;
     }
 
-    if (right_ind < used_size && data[right_ind] > data[largest_ind])
+    if (right_ind < static_cast<unsigned int>(used_size)
+        && data[right_ind] > data[largest_ind])
     {
       largest_ind = right_ind;
     }
 
-    if (largest_ind != root)
+    if (largest_ind != static_cast<unsigned int>(root))
     {
-      std::swap(data[root], data[largest_ind]);
-      heapify(data, used_size, largest_ind);
+      std::swap(data[static_cast<unsigned int>(root)], data[largest_ind]);
+      heapify(data, used_size, static_cast<int>(largest_ind));
     }
   }
 
@@ -41,7 +43,7 @@ namespace itis {
     // сортировать
     for (int i = size - 1; i >= 0; i--)
     {
-      std::swap(data[0], data[i]);
+      std::swap(data[0], data[static_cast<unsigned int>(i)]);
       heapify(data, i, 0);
     }
   }

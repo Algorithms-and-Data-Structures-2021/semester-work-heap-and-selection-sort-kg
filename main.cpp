@@ -11,6 +11,7 @@ int main(int argc, char *argv[]) {
 
   vector<int> vec {10, 3, 76, 34, 23, 32};
   itis::heap_sort(vec);
+//  itis::selection_sort(vec);
 
   for (int i: vec)
   {
