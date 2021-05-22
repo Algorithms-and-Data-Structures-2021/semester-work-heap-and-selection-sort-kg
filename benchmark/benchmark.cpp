@@ -6,7 +6,7 @@
 #include <sstream>      // stringstream
 
 // подключаем вашу структуру данных
-#include "data_structure.hpp"
+#include "algorithm.hpp"
 
 using namespace std;
 using namespace itis;
@@ -37,18 +37,16 @@ int main(int argc, char **argv) {
   const auto path = string(kDatasetPath);
 
   vector<string> mas{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
-//  vector<string> mas{"1", "2", "3", "4", "5"};
-//  vector<string> mas2{"100", "1000", "10000", "100000", "200000", "300000", "400000", "500000", "600000", "700000", "800000", "900000", "1000000"};
-//  vector<string> mas2{"100", "1000", "10000", "200000", "400000", "600000", "800000", "1000000"};
-  vector<string> mas2{"100", "1000", "10000", "250000", "500000", "750000", "1000000"};
+//  vector<string> mas2{"100", "1000", "10000", "250000", "500000", "750000", "1000000"};
+  vector<string> mas2{"750000"};
   vector<string> mas3{"1", "2", "3", "4", "5"};
 
   auto output_file = ofstream(path);
   output_file.open(path + "/" + "result.csv", ios::out | ios::app);
-  output_file << "file" << "," << "count" << "," << "number" << "," << "selection_sort" << "," << "heap_sort" << endl;
-  for(int i =0; i < 7; i++){
+//  output_file << "file" << "," << "count" << "," << "number" << "," << "selection_sort" << "," << "heap_sort" << endl;
+  for(int i =0; i < 1; i++){
     for(int j = 0; j < 5; j++){
-      for(int k = 0; k < 10; k++){
+      for(int k = 0; k < 1; k++){
         auto path_file = string("/selection_sort/" + mas3.at(j) + "/" + mas2.at(i) + ".csv");
         auto data = makeArray(path + path_file);
         itis::HeapSort *main_heap = new itis::HeapSort();
