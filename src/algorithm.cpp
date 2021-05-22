@@ -1,22 +1,21 @@
-#include "data_structure.hpp"
-
+#include "algorithm.hpp"
 
 namespace itis {
 
-  void heapify(std::vector <int> &data, int used_size, int root)
+  void heapify(std::vector <int> &data, int range, int root)
   {
     // найти найбольший из 3 узлов: родителя и 2 его детей
     auto largest_ind {static_cast<unsigned int>(root)};
     auto left_ind {static_cast<unsigned int>(2 * root + 1)};
     auto right_ind {static_cast<unsigned int>(2 * root + 2)};
 
-    if (left_ind < static_cast<unsigned int>(used_size)
+    if (left_ind < static_cast<unsigned int>(range)
         && data[left_ind] > data[largest_ind])
     {
       largest_ind = left_ind;
     }
 
-    if (right_ind < static_cast<unsigned int>(used_size)
+    if (right_ind < static_cast<unsigned int>(range)
         && data[right_ind] > data[largest_ind])
     {
       largest_ind = right_ind;
@@ -25,7 +24,7 @@ namespace itis {
     if (largest_ind != static_cast<unsigned int>(root))
     {
       std::swap(data[static_cast<unsigned int>(root)], data[largest_ind]);
-      heapify(data, used_size, static_cast<int>(largest_ind));
+      heapify(data, range, static_cast<int>(largest_ind));
     }
   }
 
@@ -48,40 +47,6 @@ namespace itis {
     }
   }
 
-/*  void HeapSort::add(int x) {
-    HeapSort::heap[size_] = x;
-    size_++;
-    int i = size_ - 1;
-    while (i!=0 && HeapSort::heap[i]<HeapSort::heap[(i-1)/2]){
-      std::swap(HeapSort::heap[i],HeapSort::heap[(i-1)/2]);
-      i = (i-1)/2;
-    }
-  }
-
-  int HeapSort::minDel() {
-    int min = HeapSort::heap[0];
-    std::swap(HeapSort::heap[0],HeapSort::heap[size_-1]);
-    size_--;
-    int i = 0;
-    int leftChild = 2*i+1;
-    if (leftChild+1<size_ && HeapSort::heap[leftChild]>HeapSort::heap[leftChild+1]) leftChild++;
-    while (2*i<size_ && HeapSort::heap[i]>HeapSort::heap[leftChild]){
-      std::swap(HeapSort::heap[i],HeapSort::heap[leftChild]);
-      i = leftChild;
-      leftChild = 2*i+1;
-      if (leftChild+1<size_ && HeapSort::heap[leftChild]>HeapSort::heap[leftChild+1]) leftChild++;
-    }
-    return min;
-  }
-
-  void HeapSort::sort(std::vector<int> data) {
-    for (int i = 0; i<size_; i++) {
-      add(data.at(i));
-    }
-    for (int i = 0; i<size_; i++) {
-      data.at(i) = minDel();
-    }
-  }*/
 
   void selection_sort(std::vector<int> &data)
   {

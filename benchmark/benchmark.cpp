@@ -5,7 +5,7 @@
 #include <chrono>       // high_resolution_clock, duration_cast, nanoseconds
 #include <sstream>      // stringstream
 
-#include "data_structure.hpp"
+#include "algorithm.hpp"
 
 using namespace std;
 using namespace itis;
@@ -44,7 +44,7 @@ int main(int argc, char **argv) {
   output_file << "file" << "," << "count" << "," << "number" << "," << "selection_sort" << "," << "heap_sort" << endl;
   for(int i =0; i < 7; i++){
     for(int j = 0; j < 5; j++){
-      for(int k = 0; k < 10; k++){
+      for(int k = 0; k < 1; k++){
         auto path_file = string("/selection_sort/" + mas3.at(j) + "/" + mas2.at(i) + ".csv");
         auto data = makeArray(path + path_file);
         const auto time_point_before = chrono::steady_clock::now();
