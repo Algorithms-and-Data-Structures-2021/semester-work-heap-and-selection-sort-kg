@@ -81,11 +81,13 @@ namespace itis {
     }
   }*/
 
-  void selection_sort(std::vector<int> &data, int n)
+  void selection_sort(std::vector<int> &data)
   {
-    for (int i = 0; i < n-1; i++)
+    unsigned int size = data.size();
+
+    for (unsigned int i = 0; i < size - 1; i++)
     {
-      for (int j = i + 1; j < n; j++)
+      for (unsigned int j = i + 1; j < size; j++)
       {
         if (data.at(i) > data.at(j))
         {

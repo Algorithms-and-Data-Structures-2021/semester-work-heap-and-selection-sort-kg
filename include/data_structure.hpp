@@ -4,7 +4,7 @@
 
 namespace itis {
 
-  void selection_sort(std::vector<int> &data, int n);
+  void selection_sort(std::vector<int> &data);
 
   void heapify(std::vector <int> &data, int used_size, int index);
 
