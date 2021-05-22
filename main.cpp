@@ -9,10 +9,12 @@ int main(int argc, char *argv[]) {
     cout << index << ": " << argv[index] << endl;
   }
 
-  std::vector<int> v {10, 3, 2, 4, 11};
-  itis::selection_sort(v, 5);
-  for (int h: v){
-    cout << h << endl;
+  vector<int> vec {10, 3, 76, 34, 23, 32};
+  itis::heap_sort(vec);
+
+  for (int i: vec)
+  {
+    cout << i << "  ";
   }
   return 0;
 }

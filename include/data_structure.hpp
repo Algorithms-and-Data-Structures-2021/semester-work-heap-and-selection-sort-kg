@@ -1,20 +1,16 @@
 #pragma once
 #include <vector>
 
-// Заголовочный файл с объявлением структуры данных
 
 namespace itis {
 
-  // Tip 1: объявите здесь необходимые структуры, функции, константы и прочее
-
-  // Пример: объявление константы времени компиляции в заголовочном файле
-  inline constexpr auto kStringConstant = "Hello, stranger!";
-
-  // Пример: объявление структуры с полями и методами
-
   void selection_sort(std::vector<int> &data, int n);
 
-  struct HeapSort {
+  void heapify(std::vector <int> &data, int used_size, int index);
+
+  void heap_sort(std::vector<int> &data);
+
+/*  struct HeapSort {
    public:
     int size_{0};
     int heap[1000000];
@@ -32,6 +28,6 @@ namespace itis {
     int size() const {
       return size_;
     }
-  };
+  };*/
 
 }  // namespace itis

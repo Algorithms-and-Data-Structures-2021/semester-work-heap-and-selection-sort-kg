@@ -1,12 +1,52 @@
 #include "data_structure.hpp"
 
-// файл с определениями
 
 namespace itis {
 
-  // здесь должны быть определения методов вашей структуры
+  void heapify(std::vector <int> &data, int used_size, int root)
+  {
+    // найти найбольший из 3 узлов: родителя и 2 его детей
+    int largest_ind = root;
+    int left_ind = 2 * root + 1;
+    int right_ind = 2 * root + 2;
 
-  void HeapSort::add(int x) {
+    if (left_ind < used_size && data[left_ind] > data[largest_ind])
+    {
+      largest_ind = left_ind;
+    }
+
+    if (right_ind < used_size && data[right_ind] > data[largest_ind])
+    {
+      largest_ind = right_ind;
+    }
+
+    if (largest_ind != root)
+    {
+      std::swap(data[root], data[largest_ind]);
+      heapify(data, used_size, largest_ind);
+    }
+  }
+
+  void heap_sort(std::vector<int> &data)
+  {
+    int size {static_cast<int>(data.size())};
+
+    // создать максимальную кучу
+    for (int i = (size - 2) / 2; i >=0; i--)
+    {
+      heapify(data, size, i);
+    }
+
+
+    // сортировать
+    for (int i = size - 1; i >= 0; i--)
+    {
+      std::swap(data[0], data[i]);
+      heapify(data, i, 0);
+    }
+  }
+
+/*  void HeapSort::add(int x) {
     HeapSort::heap[size_] = x;
     size_++;
     int i = size_ - 1;
@@ -39,12 +79,16 @@ namespace itis {
     for (int i = 0; i<size_; i++) {
       data.at(i) = minDel();
     }
-  }
+  }*/
 
-  void selection_sort(std::vector<int> &data, int n) {
-    for (int i = 0; i < n-1; i++){
-      for (int j = i + 1; j < n; j++){
-        if (data.at(i) > data.at(j)) {
+  void selection_sort(std::vector<int> &data, int n)
+  {
+    for (int i = 0; i < n-1; i++)
+    {
+      for (int j = i + 1; j < n; j++)
+      {
+        if (data.at(i) > data.at(j))
+        {
           int x = data.at(i);
           data.at(i) = data.at(j);
           data.at(j) = x;
