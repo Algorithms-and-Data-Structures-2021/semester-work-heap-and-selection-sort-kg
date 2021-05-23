@@ -2,10 +2,6 @@
 
 [![CMake](https://github.com/Algorithms-and-Data-Structures-2021/semester-work-template/actions/workflows/cmake.yml/badge.svg)](https://github.com/Algorithms-and-Data-Structures-2021/semester-work-template/actions/workflows/cmake.yml)
 
-**_Измените status badge сверху для отображения статуса сборки вашего проекта._**
-
-`Actions > CMake > ... > Create status badge`
-
 В данном проекте были реализованны две сортировки: selection sort, heap sort. Heap sort является модификацией сортировки выбором, работающей быстрее: selection heap за O(n^2), heap sort за O(n logn). Сортировка массива используется для упорядычевания данных для их удобного хранения или вывода пользователю.
 
 ## Команда "Girls’ Energy"
