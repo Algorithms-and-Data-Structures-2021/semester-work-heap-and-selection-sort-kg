@@ -149,7 +149,10 @@ dataset/data/
 
 ## Источники
 
-1.Selection sort (Wikipedia) - https://en.wikipedia.org/wiki/Selection_sort
-2.Selection Sort (GeeksforGeeks) - https://www.geeksforgeeks.org/selection-sort/
-3.Heapsort (Wikipedia) - https://en.wikipedia.org/wiki/Heapsort
-4.Heap Sort Algorithm (Programiz) - https://www.programiz.com/dsa/heap-sort
+Selection sort:
+  1. Selection sort (Wikipedia) - https://en.wikipedia.org/wiki/Selection_sort
+  2. Selection Sort (GeeksforGeeks) - https://www.geeksforgeeks.org/selection-sort/
+
+Heap sort:
+  1. Heapsort (Wikipedia) - https://en.wikipedia.org/wiki/Heapsort
+  2. Heap Sort Algorithm (Programiz) - https://www.programiz.com/dsa/heap-sort
