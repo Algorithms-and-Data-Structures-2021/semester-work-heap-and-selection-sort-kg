@@ -149,6 +149,9 @@ dataset/data/
 
 ## Источники
 
-_Список использованных при реализации структуры данных источников._
-
-_**Это не плагиат, это уважение чужого труда и помощь своим сокурсникам более подробно разобраться в теме.**_
+Selection sort:
+  1. Selection sort (Wikipedia) - https://en.wikipedia.org/wiki/Selection_sort
+  2. Selection Sort (GeeksforGeeks) - https://www.geeksforgeeks.org/selection-sort/
+Heap sort:
+  1.Heapsort (Wikipedia) - https://en.wikipedia.org/wiki/Heapsort
+  2.Heap Sort Algorithm (Programiz) - https://www.programiz.com/dsa/heap-sort
